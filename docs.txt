@@ -21,7 +21,7 @@ Backend:
 - Create config.env file (to store env variables)
 
 Dependencies:
-npm i express
+npm i express mongoose bcryptjs
 npm i -D dotenv
 npm i -D nodemon (if not already installed globally)
 
