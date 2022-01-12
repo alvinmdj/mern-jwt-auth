@@ -21,7 +21,7 @@ Backend:
 - Create config.env file (to store env variables)
 
 Dependencies:
-npm i express mongoose bcryptjs
+npm i express mongoose bcryptjs jsonwebtoken
 npm i -D dotenv
 npm i -D nodemon (if not already installed globally)
 
@@ -48,5 +48,14 @@ After removing git repository from client:
   Copy-paste from .gitignore in client directory
   Add: 'node_modules/' & 'config.env' & 'secret.txt'
 - remove .gitignore in client directory
+
+=========================================================================
+
+Others
+
+--- Create random string with node in terminal ---
+
+node
+require('crypto').randomBytes(35).toString('hex')
 
 =========================================================================

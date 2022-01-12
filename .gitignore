@@ -17,7 +17,7 @@ node_modules/
 /build
 
 # misc
-secret.txt
+local-docs.txt
 .DS_Store
 *.pem
 

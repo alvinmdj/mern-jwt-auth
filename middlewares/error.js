@@ -1,4 +1,3 @@
-const res = require('express/lib/response')
 const ErrorResponse = require('../utils/errorResponse')
 
 const errorHandler = (err, req, res, next) => {
@@ -6,13 +5,13 @@ const errorHandler = (err, req, res, next) => {
 
   error.message = err.message
 
-  // Error code in Mongoose : Duplicate Key
+  // Error message for duplicate entry (e.g. duplicate email address -> email must be unique)
   if (err.code === 11000) {
-    const message = "Duplicate field value enter"
+    const message = "This email address is already registered"
     error = new ErrorResponse(message, 400)
   }
 
-  // Mongoose Error Name : Validation Error
+  // Error message(s) provided by UserSchema requirements (e.g. required field, etc.)
   if (err.name === "ValidationError") {
     const message = Object.values(err.errors).map(val => val.message)
     error = new ErrorResponse(message, 400)

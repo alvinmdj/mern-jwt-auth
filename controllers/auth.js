@@ -1,6 +1,7 @@
 const User = require('../models/User')
 const ErrorResponse = require('../utils/errorResponse')
 
+// Register controller
 exports.register = async (req, res, next) => {
   const { username, email, password } = req.body
 
@@ -9,32 +10,21 @@ exports.register = async (req, res, next) => {
       username, email, password
     })
 
-    res.status(201).json({
-      success: true, user
-    })
+    sendToken(user, 201, res)
 
   } catch (err) {
     // Use error handler middleware
     next(err)
-
-    // res.status(500).json({
-    //   success: false,
-    //   error: err.message
-    // })
   }
 }
 
+// Login controller
 exports.login = async (req, res, next) => {
   const { email, password} = req.body
 
   if(!email || !password) {
     // Use error handler middleware
     return next(new ErrorResponse("Please provide both email and password", 400))
-
-    // res.status(400).json({
-    //   success: false,
-    //   error: "Please provide both email and password"
-    // })
   }
 
   try {
@@ -43,11 +33,6 @@ exports.login = async (req, res, next) => {
     if(!user) {
       // Use error handler middleware
       return next(new ErrorResponse("Invalid credentials", 401))
-
-      // res.status(401).json({
-      //   success: false,
-      //   error: "Invalid credentials"
-      // })
     }
 
     const isMatch = await user.matchPassword(password)
@@ -55,33 +40,28 @@ exports.login = async (req, res, next) => {
     if(!isMatch) {
       // Use error handler middleware
       return next(new ErrorResponse("Invalid credentials", 401))
-
-      // res.status(401).json({
-      //   success: false,
-      //   error: "Invalid credentials"
-      // })
     }
 
-    res.status(200).json({
-      success: true,
-      token: "somerandomtokenbeforeworkingwithjwt"
-    })
+    sendToken(user, 200, res)
 
   } catch (err) {
     // Use error handler middleware
     next(err)
-    
-    // res.status(500).json({
-    //   success: false,
-    //   error: err.message
-    // })
   }
 }
 
+// Forgot password controller
 exports.forgotPassword = (req, res, next) => {
   res.send("Forgot Password Route")
 }
 
+// Reset password controller
 exports.resetPassword = (req, res, next) => {
   res.send("Reset Password Route")
+}
+
+// Send token to json
+const sendToken = (user, statusCode, res) => {
+  const token = user.getSignedToken()
+  res.status(statusCode).json({ success: true, token })
 }

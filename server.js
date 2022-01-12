@@ -3,6 +3,7 @@ require('dotenv').config({ path: "./config.env" })
 const express = require('express')
 const databaseConnection = require('./config/db')
 const authRoutes = require('./routes/auth')
+const dashboardRoutes = require('./routes/dashboard')
 const errorHandler = require('./middlewares/error')
 
 // Connect with MongoDB Atlas
@@ -13,6 +14,7 @@ const app = express()
 // Middlewares 
 app.use(express.json())
 app.use('/api/auth', authRoutes)
+app.use('/api/dashboard', dashboardRoutes)
 app.use(errorHandler) // error handler must be placed as last middleware
 
 
