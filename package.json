@@ -1,0 +1,19 @@
+{
+  "name": "mern-jwt-auth",
+  "version": "1.0.0",
+  "description": "MERN Stack Authentication with JWT",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Alvin Martin Djong",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "dotenv": "^11.0.0"
+  }
+}
