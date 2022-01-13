@@ -59,7 +59,7 @@ const Login = () => {
       setPassword("")
       setTimeout(() => {
         setError("")
-      }, 5000)
+      }, 10000)
     }
   }
 

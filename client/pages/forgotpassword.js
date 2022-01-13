@@ -40,7 +40,7 @@ const ForgotPassword = () => {
       setEmail("")
       setTimeout(() => {
         setError("")
-      }, 5000)
+      }, 10000)
     }
   }
 

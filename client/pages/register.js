@@ -69,7 +69,7 @@ const Register = () => {
       setError(err.response.data.error)
       setTimeout(() => {
         setError("")
-      }, 5000)
+      }, 10000)
     }
   }
 
@@ -168,6 +168,7 @@ const Register = () => {
 
             <Stack spacing={10} pt={2}>
               <Button
+                type='submit'
                 loadingText="Submitting"
                 size="lg"
                 bg={'blue.400'}
