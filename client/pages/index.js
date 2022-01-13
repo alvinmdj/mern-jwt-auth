@@ -29,7 +29,7 @@ export default function Home() {
           overflow={'hidden'}>
           <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
             <Text textAlign={'center'}>
-              This is a fully-functioning JWT authentication application for Next.js
+              JWT authentication system with Next.js
             </Text>
             <Button
               onClick={() => router.push('/login')}
