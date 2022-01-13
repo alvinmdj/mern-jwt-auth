@@ -14,7 +14,7 @@ MongoDB Atlas
 
 - Create User
 - Create Database (Choose Free Plan)
-- Create Network Access (From anywhere: 0.0.0.0/0)
+- Create Network Access
 
 =========================================================================
 
@@ -66,7 +66,7 @@ Git
 After removing git repository from client:
 - setup .gitignore in root directory : 
   Copy-paste from .gitignore in client directory
-  Add: 'node_modules/' & 'config.env' & 'secret.txt'
+  Add: 'node_modules/' & '.next/' & 'config.env' & 'secret.txt'
 - remove .gitignore in client directory
 
 =========================================================================
