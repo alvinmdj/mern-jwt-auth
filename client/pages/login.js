@@ -138,7 +138,7 @@ const Login = () => {
               </Button>
               <Stack>
                 <Text align={'center'}>
-                  Don't have an account? 
+                  Do not have an account? 
                   {' '}
                   <NextLink href='/register'>
                     <Link color={'blue.400'}>Register</Link>

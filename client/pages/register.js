@@ -82,10 +82,10 @@ const Register = () => {
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
           <Heading fontSize={'4xl'} textAlign={'center'}>
-            Sign up now, it's FREE
+            Sign up now for FREE
           </Heading>
           <Text fontSize={'lg'} color={'gray.600'}>
-            Enjoy all of our cool <Link color={'blue.400'}>features</Link> ✌️
+            Enjoy all of our cool features ✌️
           </Text>
         </Stack>
         <Box

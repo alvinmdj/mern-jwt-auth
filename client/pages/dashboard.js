@@ -16,6 +16,9 @@ const Dashboard = () => {
   const [error, setError] = useState("")
   const [data, setData] = useState("")
 
+  const outerBoxBg = useColorModeValue('white', 'gray.800')
+  const innerBoxBg = useColorModeValue('gray.50', 'gray.900')
+
   useEffect(() => {
     if (!localStorage.getItem("authenticationToken")) {
       router.push('/login')
@@ -60,11 +63,11 @@ const Dashboard = () => {
         <Box
           maxW={'330px'}
           w={'full'}
-          bg={useColorModeValue('white', 'gray.800')}
+          bg={outerBoxBg}
           boxShadow={'2xl'}
           rounded={'md'}
           overflow={'hidden'}>
-          <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
+          <Box bg={innerBoxBg} px={6} py={10}>
             <Text textAlign={'center'}>
               { data }
             </Text>
