@@ -19,6 +19,16 @@ app.use('/api/auth', authRoutes)
 app.use('/api/dashboard', dashboardRoutes)
 app.use(errorHandler) // error handler must be placed as last middleware
 
+// Default route
+app.get('/', (req, res, next) => {
+  res.status(200).json({
+      status: 'success',
+      data: {
+          name: 'Next.js - Node - JWT Auth',
+          version: '0.1.0'
+      }
+  })
+})
 
 // Run server
 const PORT = process.env.PORT || 5000
