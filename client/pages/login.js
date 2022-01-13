@@ -46,7 +46,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/auth/login", 
+        "/api/auth/login", 
         { email, password }, 
         config
       )
@@ -54,7 +54,9 @@ const Login = () => {
       router.push('/dashboard')
 
     } catch (err) {
-      setError(error.response.data.error)
+      setError(err.response.data.error)
+      setEmail("")
+      setPassword("")
       setTimeout(() => {
         setError("")
       }, 5000)

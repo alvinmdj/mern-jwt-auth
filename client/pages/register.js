@@ -16,7 +16,7 @@ import {
   Link,
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
@@ -31,6 +31,12 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState("")
+
+  useEffect(() => {
+    if(localStorage.getItem("authenticationToken")) {
+      router.push('/dashboard')
+    }
+  }, [router])
 
   const handleRegister = async (e) => {
     e.preventDefault()
@@ -60,7 +66,7 @@ const Register = () => {
       router.push('/dashboard')
 
     } catch (err) {
-      setError(error.response.data.error)
+      setError(err.response.data.error)
       setTimeout(() => {
         setError("")
       }, 5000)

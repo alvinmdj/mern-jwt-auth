@@ -1,6 +1,7 @@
 import {
   Alert,
   AlertIcon,
+  Box,
   Button,
   Flex,
   FormControl,
@@ -58,7 +59,7 @@ const ResetToken = () => {
       setSuccess(data.data)
       
     } catch (err) {
-      setError(error.response.data.error)
+      setError(err.response.data.error)
       setTimeout(() => {
         setError("")
       }, 5000)
@@ -93,7 +94,12 @@ const ResetToken = () => {
 
         {success && <Alert rounded='10' mb={4} status='success'>
           <AlertIcon />
-          { success } <NextLink href='/login'><Link>Login</Link></NextLink>
+          <Box>
+            { success }
+            <NextLink href='/login'>
+              <Link color={'blue.400'}>Login</Link>
+            </NextLink>
+          </Box>
         </Alert>}
 
         <FormControl isRequired>

@@ -1,4 +1,6 @@
 import {
+  Alert,
+  AlertIcon,
   Button,
   FormControl,
   Flex,
@@ -34,7 +36,7 @@ const ForgotPassword = () => {
       setSuccess(data.data)
 
     } catch (err) {
-      setError(error.response.data.error)
+      setError(err.response.data.error)
       setEmail("")
       setTimeout(() => {
         setError("")

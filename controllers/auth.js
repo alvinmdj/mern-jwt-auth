@@ -82,7 +82,7 @@ exports.forgotPassword = async (req, res, next) => {
         message: message
       })
 
-      res.status(200).json({ success: true, data: "Email sent successfully" })
+      res.status(200).json({ success: true, data: "Email sent successfully. Please check your email." })
 
     } catch (err) {
       user.resetPasswordToken = undefined
@@ -120,7 +120,7 @@ exports.resetPassword = async (req, res, next) => {
 
     res.status(201).json({
       success: true,
-      data: "Password reset successfully"
+      data: "Password reset successfully."
     })
 
   } catch (err) {
