@@ -3,6 +3,11 @@
 Front-end : https://mern-jwt-auth.vercel.app/
 API       : https://next-jwt-auth.herokuapp.com/
 
+URL Setup for deployment:
+Set URL in config.env with the front-end URL
+Set 'destination' in next.config.js with the back-end URL 
+    (until the top level-domain e.g. <.com>)
+
 =========================================================================
 
 MongoDB Atlas
