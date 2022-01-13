@@ -4,7 +4,7 @@ module.exports = {
     return [
       {
         source: '/api/:slug*',
-        destination: 'http://localhost:5000/api/:slug*'
+        destination: 'https://next-jwt-auth.herokuapp.com/api/:slug*'
       }
     ]
   }

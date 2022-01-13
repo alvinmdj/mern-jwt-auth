@@ -1,5 +1,10 @@
 =========================================================================
 
+Front-end : https://mern-jwt-auth.vercel.app/
+API       : https://next-jwt-auth.herokuapp.com/
+
+=========================================================================
+
 MongoDB Atlas
 
 - Create User
