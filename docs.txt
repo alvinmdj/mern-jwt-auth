@@ -22,7 +22,7 @@ Backend:
 
 Backend Dependencies:
 npm i express mongoose bcryptjs jsonwebtoken nodemailer
-npm i -D dotenv
+npm i dotenv
 npm i -D nodemon (if not already installed globally)
 
 Run with nodemon: 
