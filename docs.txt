@@ -20,7 +20,7 @@ Backend:
 - Create controllers, routes, models, middlewares and config folder
 - Create config.env file (to store env variables)
 
-Dependencies:
+Backend Dependencies:
 npm i express mongoose bcryptjs jsonwebtoken nodemailer
 npm i -D dotenv
 npm i -D nodemon (if not already installed globally)
@@ -38,6 +38,16 @@ Front-end (Next.js) initial setup:
 
 Remove git repository from client folder (with bash):
 rm -rf .git
+
+Add 'proxy' (url of the express API) in package.json
+
+Front-end Dependencies (inside client directory):
+npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^5
+npm i @chakra-ui/icons
+npm i axios
+
+Run (Development):
+npm run dev
 
 =========================================================================
 
